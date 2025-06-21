@@ -1,2 +1,2 @@
-streamlit == 1.40.0
-streamlit-drawable-canvas==0.9.3
+gradio 5.34.2
+gradio_image_annotation

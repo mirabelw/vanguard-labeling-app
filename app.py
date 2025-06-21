@@ -1,42 +1,36 @@
-import streamlit as st
-from streamlit_drawable_canvas import st_canvas
-from PIL import Image
-import json
-import os
+import gradio as gr
+from gradio_image_annotation import image_annotator
+import json, os, time
 
-st.title("Labeling UI Prototype")
-uploaded_file = st.file_uploader("Upload an Image", type=["png", "jpg", "jpeg"])
-if uploaded_file is not None:
+def save_boxes(annot):
+    if not annot or "boxes" not in annot:
+        return "No image or boxes provided."
+    filename = f"uploaded_{int(time.time())}.png"
+    annotations = {"filename": filename, "boxes": []}
+    for box in annot["boxes"]:
+        annotations["boxes"].append({
+            "xmin": box["xmin"],
+            "ymin": box["ymin"],
+            "xmax": box["xmax"],
+            "ymax": box["ymax"],
+            "label": box.get("label", "")
+        })
+    os.makedirs("annotations", exist_ok=True)
+    path = f"annotations/{filename}_boxes.json"
+    with open(path, "w") as f:
+        json.dump(annotations, f, indent=2)
+    return f"Saved to {path}"
 
-    # Load image as PIL for canvas background
-    image = Image.open(uploaded_file)
-    st.image(image, caption="Uploaded Image")
-
-    # Bounding box canvas
-    canvas_result = st_canvas(
-        fill_color="rgba(255,0,0,0.3)",
-        stroke_width=2,
-        background_image=image,
-        update_streamlit=True,
-        height=image.height,
-        width=image.width,
-        drawing_mode="rect",
-        key="canvas",
+with gr.Blocks() as demo:
+    gr.Markdown("## Labeling UI Prototype")
+    
+    annot = image_annotator( 
+        label_list=["object"],
+        label_colors=[(255, 0, 0)]
     )
+    
+    save_btn = gr.Button("Save")
+    status = gr.Textbox(lines=1, label="Status")
+    save_btn.click(save_boxes, inputs=annot, outputs=status)
 
-    # Save box coordinates
-    if st.button("Save Boxes"):
-        if canvas_result.json_data and canvas_result.json_data["objects"]:
-            annotations = {
-                "filename": uploaded_file.name,
-                "boxes": canvas_result.json_data["objects"]
-            }
-
-            os.makedirs("annotations", exist_ok=True)
-            out_path = f"annotations/{uploaded_file.name}_boxes.json"
-            with open(out_path, "w") as f:
-                json.dump(annotations, f, indent=2)
-
-            st.success(f"Saved to {out_path}")
-        else:
-            st.warning("No boxes drawn.")
+demo.launch()
