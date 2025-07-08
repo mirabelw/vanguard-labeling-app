@@ -21,12 +21,32 @@ def save_boxes(annot):
         json.dump(annotations, f, indent=2)
     return f"Saved to {path}"
 
+# Full label list you provided
+labels = [
+    "Car", "Large vehicle", "Truck", "Bus", "Train", "Bicycle", "Motorized two-wheeler",
+    "Fixed-wing Aircraft", "Small Aircraft", "Cargo Plane", "Helicopter", "Passenger Vehicle",
+    "Small Car", "Pickup Truck", "Utility Truck", "Cargo Truck", "Truck w/Box", "Truck Tractor",
+    "Trailer", "Truck w/Flatbed", "Truck w/Liquid", "Crane Truck", "Railway Vehicle",
+    "Passenger Car", "Cargo Car", "Flat Car", "Tank car", "Locomotive", "Maritime Vessel",
+    "Motorboat", "Sailboat", "Tugboat", "Barge", "Fishing Vessel", "Ferry", "Yacht",
+    "Container Ship", "Oil Tanker", "Engineering Vehicle", "Tower crane", "Container Crane",
+    "Reach Stacker", "Straddle Carrier", "Mobile Crane", "Dump Truck", "Haul Truck",
+    "Scraper/Tractor", "Front loader/Bulldozer", "Excavator", "Cement Mixer", "Ground Grader",
+    "Hut/Tent", "Shed", "Building", "Aircraft Hangar", "Damaged Building", "Facility",
+    "Construction Site", "Vehicle Lot", "Helipad", "Storage Tank", "Shipping container lot",
+    "Shipping Container", "Pylon", "Tower", "Pedestrian", "Pedestrian group", "Animal",
+    "DJI", "FutabaT14", "FutabaT7", "Graupner", "Noise", "Taranis", "Turnigy", "Other"
+]
+
+# One color per label (all red for now)
+colors = [(255, 0, 0)] * len(labels)
+
 with gr.Blocks() as demo:
     gr.Markdown("## Labeling UI Prototype")
     
     annot = image_annotator( 
-        label_list=["object"],
-        label_colors=[(255, 0, 0)]
+        label_list=labels,
+        label_colors=colors
     )
     
     save_btn = gr.Button("Save")
