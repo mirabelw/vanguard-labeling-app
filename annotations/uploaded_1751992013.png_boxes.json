@@ -1,0 +1,33 @@
+{
+  "filename": "uploaded_1751992013.png",
+  "boxes": [
+    {
+      "xmin": 0,
+      "ymin": 266,
+      "xmax": 46,
+      "ymax": 376,
+      "label": "Pedestrian"
+    },
+    {
+      "xmin": 183,
+      "ymin": 270,
+      "xmax": 245,
+      "ymax": 416,
+      "label": "Pedestrian"
+    },
+    {
+      "xmin": 392,
+      "ymin": 288,
+      "xmax": 473,
+      "ymax": 401,
+      "label": "Pedestrian"
+    },
+    {
+      "xmin": 211,
+      "ymin": 216,
+      "xmax": 539,
+      "ymax": 355,
+      "label": "Bus"
+    }
+  ]
+}

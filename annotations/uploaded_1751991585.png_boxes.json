@@ -1,0 +1,19 @@
+{
+  "filename": "uploaded_1751991585.png",
+  "boxes": [
+    {
+      "xmin": 648,
+      "ymin": 260,
+      "xmax": 734,
+      "ymax": 422,
+      "label": "Pedestrian"
+    },
+    {
+      "xmin": 609,
+      "ymin": 346,
+      "xmax": 765,
+      "ymax": 463,
+      "label": "Bicycle"
+    }
+  ]
+}

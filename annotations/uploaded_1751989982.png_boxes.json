@@ -1,0 +1,12 @@
+{
+  "filename": "uploaded_1751989982.png",
+  "boxes": [
+    {
+      "xmin": 615,
+      "ymin": 216,
+      "xmax": 723,
+      "ymax": 363,
+      "label": "Cargo Truck"
+    }
+  ]
+}

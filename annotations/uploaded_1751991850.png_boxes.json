@@ -1,0 +1,12 @@
+{
+  "filename": "uploaded_1751991850.png",
+  "boxes": [
+    {
+      "xmin": 514,
+      "ymin": 158,
+      "xmax": 758,
+      "ymax": 426,
+      "label": "Truck w/Flatbed"
+    }
+  ]
+}

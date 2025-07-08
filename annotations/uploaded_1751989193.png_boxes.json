@@ -1,0 +1,12 @@
+{
+  "filename": "uploaded_1751989193.png",
+  "boxes": [
+    {
+      "xmin": 343,
+      "ymin": 345,
+      "xmax": 687,
+      "ymax": 465,
+      "label": "Flat Car"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "filename": "uploaded_1751991962.png",
+  "boxes": [
+    {
+      "xmin": 180,
+      "ymin": 281,
+      "xmax": 257,
+      "ymax": 340,
+      "label": "Car"
+    },
+    {
+      "xmin": 710,
+      "ymin": 274,
+      "xmax": 743,
+      "ymax": 376,
+      "label": "Pedestrian"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "filename": "uploaded_1751991436.png",
+  "boxes": [
+    {
+      "xmin": 657,
+      "ymin": 261,
+      "xmax": 713,
+      "ymax": 441,
+      "label": "Pedestrian group"
+    },
+    {
+      "xmin": 331,
+      "ymin": 304,
+      "xmax": 424,
+      "ymax": 344,
+      "label": "Utility Truck"
+    }
+  ]
+}

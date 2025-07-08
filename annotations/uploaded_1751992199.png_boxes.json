@@ -1,0 +1,19 @@
+{
+  "filename": "uploaded_1751992199.png",
+  "boxes": [
+    {
+      "xmin": 701,
+      "ymin": 409,
+      "xmax": 781,
+      "ymax": 465,
+      "label": "Construction Site"
+    },
+    {
+      "xmin": 808,
+      "ymin": 401,
+      "xmax": 885,
+      "ymax": 473,
+      "label": "Car"
+    }
+  ]
+}

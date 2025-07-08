@@ -1,0 +1,19 @@
+{
+  "filename": "uploaded_1751991933.png",
+  "boxes": [
+    {
+      "xmin": 750,
+      "ymin": 297,
+      "xmax": 788,
+      "ymax": 358,
+      "label": "Pedestrian group"
+    },
+    {
+      "xmin": 501,
+      "ymin": 299,
+      "xmax": 557,
+      "ymax": 354,
+      "label": "Car"
+    }
+  ]
+}
